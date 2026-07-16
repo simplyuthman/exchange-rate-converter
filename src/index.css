@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(240, 15%, 15%);
+  padding: 35px 40px;
+  color: hsl(210, 11%, 96%);
+  border-radius: 12px; 
+  gap: 10px;
+}
+h3 {
+  padding: 10px 0;
+  font-weight: 400;
+}
+input, select {
+  width: 100%;
+  padding: 8px 15px; 
+  border-radius: 4px;
+  outline: none;
+}
+.result-display {
+  padding: 10px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1da211; 
+}
+
+@media (min-width:  375px) {
+  .container {
+    width: 300px;
+  }
+}
