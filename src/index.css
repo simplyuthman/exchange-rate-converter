@@ -3,43 +3,97 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: Arial;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
 }
+
 .container {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   background-color: hsl(240, 15%, 15%);
-  padding: 35px 40px;
+  padding: clamp(20px, 5vw, 35px) clamp(20px, 6vw, 40px);
   color: hsl(210, 11%, 96%);
-  border-radius: 12px; 
+  border-radius: 12px;
   gap: 10px;
 }
+
+.title {
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+}
+
 h3 {
   padding: 10px 0;
   font-weight: 400;
-}
-input, select {
-  width: 100%;
-  padding: 8px 15px; 
-  border-radius: 4px;
-  outline: none;
-}
-.result-display {
-  padding: 10px 0;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1da211; 
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
 }
 
-@media (min-width:  375px) {
+input,
+select {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  /* Prevents iOS Safari from auto-zooming in on focus */
+  font-size: max(16px, 1rem);
+}
+
+.result-display {
+  padding: 10px 0;
+  font-size: clamp(1.1rem, 4vw, 1.25rem);
+  font-weight: 600;
+  color: #1da211;
+  word-break: break-word;
+}
+
+.error {
+  color: #e04b4b;
+  font-size: 0.95rem;
+  padding: 10px 0;
+}
+
+/* Tablets and small laptops */
+@media (max-width: 600px) {
   .container {
-    width: 300px;
+    padding: 25px 20px;
+    gap: 8px;
+  }
+}
+
+/* Phones */
+@media (max-width: 400px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 20px 16px;
+    border-radius: 8px;
+  }
+
+  input,
+  select {
+    padding: 8px 12px;
+  }
+}
+
+/* Very small / older phones */
+@media (max-width: 320px) {
+  .title {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 0.85rem;
   }
 }
