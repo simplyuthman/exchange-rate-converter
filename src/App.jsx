@@ -60,7 +60,7 @@ function CurrencyConverter() {
          {loading && <p>Loading rates...</p>}
          {error && <p role="alert" className='error'>{error}</p>}
          {!loading && !error && (
-        <div className='result-display'>{convertedAmount} {toCurrency}</div>
+        <div className='result-display'>{toCurrency} {convertedAmount} </div>
       )}
 
     </div>
